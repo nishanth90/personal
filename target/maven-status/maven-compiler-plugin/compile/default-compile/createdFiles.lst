@@ -1,0 +1,2 @@
+com\amadeus\transaction\exporter\transactionDataExporter\TransactionDataExporterApplication.class
+com\amadeus\transaction\exporter\transactionDataExporter\controller\RestControllerTransactions.class
