@@ -9,13 +9,13 @@ node {
 			checkout scm
 
 			def artifactName = "transactionDataExporter"
-			def projectLocation = "com/amadeus/sentinel/batch/${artifactName}"
+			def projectLocation = "com/transaction/exporter/${artifactName}"
 
 			def dockerImage
 			def version = "latest"
-			def server = Artifactory.newServer url: ARTIFACTORY_URL, credentialsId: 'JFROG_LOCAL'
+			def server = Artifactory.newServer url: ARTIFACTORY_URL, credentialsId: 'CLOUD_CTORAGE_SERVICE_ACCOUNT'
 
-			def tool = docker.image('docker.io/nishanth90/maven-docker:latest')
+			def tool = docker.image('docker.io/nishanth90/maven:latest')
 			tool.pull()
 
 			tool.inside("--net=host -u root -v /var/run/docker.sock:/var/run/docker.sock") {
@@ -27,7 +27,7 @@ node {
 				stage('Artifactory upload') {
 
 					println 'Upload artifacts to local-jfrog'
-					withCredentials([usernamePassword( credentialsId: 'JFROG_LOCAL', usernameVariable: 'AR_USERNAME', passwordVariable: 'AR_PASSWORD')])  { sh 'mvn -B -Denv.AR_USER=$AR_USERNAME -Denv.AR_PASSWORD=$AR_PASSWORD deploy' }
+					withCredentials([ credentialsId: 'JFROG_LOCAL'])  { sh 'mvn deploy -Dmaven.test.skip=true' }
 				}
 
 				stage('artifacts') {
