@@ -25,9 +25,7 @@ node {
 				}
 
 				stage('Artifactory upload') {
-
-					println 'Upload artifacts to local-jfrog'
-					withCredentials([ credentialsId: 'JFROG_LOCAL'])  { sh 'mvn deploy -Dmaven.test.skip=true' }
+					sh 'mvn deploy -Dmaven.test.skip=true'
 				}
 
 				stage('artifacts') {
