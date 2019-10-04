@@ -21,11 +21,11 @@
 	<distributionManagement>
     <snapshotRepository>
         <id>my-repo-bucket-snapshot</id>
-        <url>gs://maven-java-microservices</url>
+        <url>gs://java-microservices/snapshots</url>
     </snapshotRepository>
     <repository>
         <id>my-repo-bucket-release</id>
-        <url>gs://maven-java-microservices</url>
+        <url>gs://java-microservices/releases</url>
     </repository>
 </distributionManagement>
 	<dependencies>
