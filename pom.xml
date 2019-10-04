@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.transaction.exporter</groupId>
-	<artifactId>transactiondataexporter</artifactId>
+	<artifactId>transactionDataExporter</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>transactionDataExporter</name>
 	<description>Spring boot transaction data exporter</description>
@@ -49,23 +49,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-        <groupId>com.spotify</groupId>
-             <artifactId>dockerfile-maven-plugin</artifactId>
-             <version>1.4.3</version>
-             <executions>
-                 <execution>
-                     <id>default</id>
-                     <goals>
-                         <goal>build</goal>
-                     </goals>
-                 </execution>
-             </executions>
-             <configuration>
-             <repository>gcr.io/sigma-celerity-254607/microservices/${artifactId}</repository>
-                 <tag>${project.version}</tag>
-             </configuration>
-         </plugin>
 		</plugins>
 
     <extensions>
