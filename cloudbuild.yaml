@@ -16,8 +16,8 @@ steps:
    'set', 
    'image', 
    'deployment', 
-   'transactionDataExporter', 
-   'transactionDataExporter=gcr.io/$PROJECT_ID/transaction-data-exporter:latest'
+   'transaction-data-exporter', 
+   'transaction-data-exporter=gcr.io/$PROJECT_ID/transaction-data-exporter:latest'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
