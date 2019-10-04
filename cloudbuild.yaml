@@ -2,5 +2,5 @@ steps:
 - name: 'maven'
   args: ['mvn', 'clean','install','deploy']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/transactionDataExporter', '.']
-images: ['gcr.io/$PROJECT_ID/transactionDataExporter']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/transaction-data-exporter', '.']
+images: ['gcr.io/$PROJECT_ID/transaction-data-exporter']
