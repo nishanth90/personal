@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: transactionDataExporter
+  name: transaction-data-exporter
 spec:
   selector:
-     run: transactionDataExporter
+     run: transaction-data-exporter
   ports:
   - protocol: TCP
     port: 80

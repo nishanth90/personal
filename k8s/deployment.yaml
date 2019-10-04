@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: transactionDataExporter
-  name: transactionDataExporter
+    run: transaction-data-exporter
+  name: transaction-data-exporter
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: transactionDataExporter
+      run: transaction-data-exporter
   template:
     metadata:
       labels:
-        run: transactionDataExporter
+        run: transaction-data-exporter
     spec:
       containers:
-      - image: gcr.io/$PROJECT_ID/transactionDataExporter:latest
-        name: transactionDataExporter
+      - image: gcr.io/$PROJECT_ID/transaction-data-exporter:latest
+        name: transaction-data-exporter
         ports:
         - containerPort: 9090
